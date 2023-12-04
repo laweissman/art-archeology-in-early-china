@@ -1,8 +1,7 @@
-chart = {
+function createTreeChart() {
   const width = 928;
 
-  // Compute the tree height; this approach will allow the height of the
-  // SVG to scale according to the breadth (width) of the tree layout.
+  // Replace 'data' with your actual data or provide a way to access it
   const root = d3.hierarchy(data);
   const dx = 10;
   const dy = width / (root.height + 1);
@@ -65,5 +64,10 @@ chart = {
     .clone(true).lower()
       .attr("stroke", "white");
   
-  return svg.node();
+  // Insert the chart into the #chart-container
+  document.getElementById("chart-container").appendChild(svg.node());
 }
+
+// Call the createTreeChart function to generate and insert the chart
+createTreeChart();
+
