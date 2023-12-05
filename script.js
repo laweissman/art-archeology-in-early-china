@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Load the JSON data from dataOne.json
-  d3.json('flare.json').then(function(data) {
+  d3.json('flarehalf.json').then(function(data) {
     console.log('Data loaded:', data); // Check if data is loaded correctly
 
     // Set the dimensions for the tree layout
