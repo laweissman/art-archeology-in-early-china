@@ -45,28 +45,29 @@ document.addEventListener('DOMContentLoaded', function() {
               .x(d => d.y)
               .y(d => d.x));
 
-    // Add nodes to the SVG
-    const node = svg.append("g")
-        .attr("stroke-linejoin", "round")
-        .attr("stroke-width", 3)
-      .selectAll("g")
-      .data(root.descendants())
-      .join("g")
-        .attr("transform", d => `translate(${d.y},${d.x})`);
+// Add nodes to the SVG
+const node = svg.append("g")
+    .attr("stroke-linejoin", "round")
+    .attr("stroke-width", 3)
+    .selectAll("g")
+    .data(root.descendants())
+    .join("g")
+    .attr("transform", d => `translate(${d.y},${d.x})`)
+    .on('click', toggleCollapse); // Move the event listener here
 
-    // Add circles for each node
-    node.append("circle")
-        .attr("fill", d => d.children ? "#555" : "#999")
-        .attr("r", 2.5);
+// Add circles for each node
+node.append("circle")
+    .attr("fill", d => d.children ? "#555" : "#999")
+    .attr("r", 2.5);
 
-    // Add text for each node
-    node.append("text")
-        .attr("dy", "0.31em")
-        .attr("x", d => d.children ? -6 : 6)
-        .attr("text-anchor", d => d.children ? "end" : "start")
-        .text(d => d.data.name)
-      .clone(true).lower()
-        .attr("stroke", "white");
+// Add text for each node
+node.append("text")
+    .attr("dy", "0.31em")
+    .attr("x", d => d.children ? -6 : 6)
+    .attr("text-anchor", d => d.children ? "end" : "start")
+    .text(d => d.data.name)
+  .clone(true).lower()
+    .attr("stroke", "white");
 
     // Add interactivity to make the tree collapsible
     node.on('click', toggleCollapse);
