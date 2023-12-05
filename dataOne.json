@@ -1,0 +1,50 @@
+{
+  "name": "Chinese Dynasties",
+  "children": [
+    {
+      "name": "Xia Dynasty",
+      "children": [
+        {"name": "Emperor 1"},
+        {"name": "Emperor 2"},
+        // ... other emperors or notable figures
+      ]
+    },
+    {
+      "name": "Shang Dynasty",
+      "children": [
+        {"name": "Emperor 1"},
+        {"name": "Emperor 2"},
+        // ... other emperors or notable figures
+      ]
+    },
+    {
+      "name": "Zhou Dynasty",
+      "children": [
+        {
+          "name": "Western Zhou",
+          "children": [
+            {"name": "Emperor 1"},
+            {"name": "Emperor 2"}
+            // ... other emperors or notable figures
+          ]
+        },
+        {
+          "name": "Eastern Zhou",
+          "children": [
+            {"name": "Emperor 1"},
+            {"name": "Emperor 2"}
+            // ... other emperors or notable figures
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Han Dynasty",
+      "children": [
+        {"name": "Emperor 1"},
+        {"name": "Emperor 2"},
+        // ... other emperors or notable figures
+      ]
+    }
+  ]
+}
