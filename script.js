@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Load the JSON data
-  d3.json('dataOne.json').then(function(data) {
+  d3.json('flare.json').then(function(data) {
     // Your D3 tree chart code using the loaded data
 
     const width = 928;
