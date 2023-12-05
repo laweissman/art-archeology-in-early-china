@@ -6,7 +6,6 @@
       "children": [
         {"name": "Emperor 1"},
         {"name": "Emperor 2"},
-        // ... other emperors or notable figures
       ]
     },
     {
@@ -14,7 +13,6 @@
       "children": [
         {"name": "Emperor 1"},
         {"name": "Emperor 2"},
-        // ... other emperors or notable figures
       ]
     },
     {
@@ -25,7 +23,6 @@
           "children": [
             {"name": "Emperor 1"},
             {"name": "Emperor 2"}
-            // ... other emperors or notable figures
           ]
         },
         {
@@ -33,7 +30,6 @@
           "children": [
             {"name": "Emperor 1"},
             {"name": "Emperor 2"}
-            // ... other emperors or notable figures
           ]
         }
       ]
@@ -43,7 +39,6 @@
       "children": [
         {"name": "Emperor 1"},
         {"name": "Emperor 2"},
-        // ... other emperors or notable figures
       ]
     }
   ]
