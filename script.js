@@ -1,16 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Load the JSON data from flare.json
+  // Load the JSON data from the flare.json file
   d3.json('flare.json').then(function(data) {
-
-    // Clear any existing SVG to prevent duplication
-    const chartContainer = document.getElementById('chart');
-    chartContainer.innerHTML = '';
 
     // Set the dimensions for the tree layout
     const width = 928;
-    const root = d3.hierarchy(data);
     const dx = 10;
     const dy = width / (root.height + 1);
+    const root = d3.hierarchy(data);
 
     // Create the tree layout
     const tree = d3.tree().nodeSize([dx, dy]);
@@ -30,28 +26,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Create the SVG element
     const svg = d3.create("svg")
-        .attr("width", width)
-        .attr("height", height)
-        .attr("viewBox", [-dy / 3, x0 - dx, width, height])
-        .attr("style", "max-width: 100%; height: auto; font: 10px sans-serif;");
+      .attr("width", width)
+      .attr("height", height)
+      .attr("viewBox", [-dy / 3, x0 - dx, width, height])
+      .attr("style", "max-width: 100%; height: auto; font: 10px sans-serif;");
 
     // Add links (lines) to the SVG
     const link = svg.append("g")
-        .attr("fill", "none")
-        .attr("stroke", "#555")
-        .attr("stroke-opacity", 0.4)
-        .attr("stroke-width", 1.5)
+      .attr("fill", "none")
+      .attr("stroke", "#555")
+      .attr("stroke-opacity", 0.4)
+      .attr("stroke-width", 1.5)
       .selectAll("path")
-        .data(root.links())
-        .join("path")
-          .attr("d", d3.linkHorizontal()
-              .x(d => d.y)
-              .y(d => d.x));
+      .data(root.links())
+      .join("path")
+        .attr("d", d3.linkHorizontal()
+            .x(d => d.y)
+            .y(d => d.x));
 
     // Add nodes to the SVG
     const node = svg.append("g")
-        .attr("stroke-linejoin", "round")
-        .attr("stroke-width", 3)
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-width", 3)
       .selectAll("g")
       .data(root.descendants())
       .join("g")
@@ -59,19 +55,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add circles for each node
     node.append("circle")
-        .attr("fill", d => d.children ? "#555" : "#999")
-        .attr("r", 2.5);
+      .attr("fill", d => d.children ? "#555" : "#999")
+      .attr("r", 2.5);
 
     // Add text for each node
     node.append("text")
-        .attr("dy", "0.31em")
-        .attr("x", d => d.children ? -6 : 6)
-        .attr("text-anchor", d => d.children ? "end" : "start")
-        .text(d => d.data.name)
+      .attr("dy", "0.31em")
+      .attr("x", d => d.children ? -6 : 6)
+      .attr("text-anchor", d => d.children ? "end" : "start")
+      .text(d => d.data.name)
       .clone(true).lower()
         .attr("stroke", "white");
 
     // Append the SVG element to the chart container
-    chartContainer.appendChild(svg.node());
+    document.getElementById('chart').appendChild(svg.node());
   });
 });
