@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Load the JSON data from dataOne.json
+  // Load the JSON data from dynasties.json
   d3.json('dynasties.json').then(function(data) {
     console.log('Data loaded:', data); // Check if data is loaded correctly
 
@@ -67,6 +67,51 @@ document.addEventListener('DOMContentLoaded', function() {
         .text(d => d.data.name)
       .clone(true).lower()
         .attr("stroke", "white");
+
+    // Add interactivity to make the tree collapsible
+    node.on('click', toggleCollapse);
+
+    function toggleCollapse(d) {
+      if (d.children) {
+        d._children = d.children;
+        d.children = null;
+      } else {
+        d.children = d._children;
+        d._children = null;
+      }
+      update(root);
+    }
+
+    function update(source) {
+      const duration = 250;
+      const nodes = root.descendants().reverse();
+      const links = root.links();
+
+      // Update the tree layout
+      tree(root);
+
+      // Update the links
+      link.data(links, d => d.target.id)
+        .transition()
+        .duration(duration)
+        .attr("d", d3.linkHorizontal()
+            .x(d => d.y)
+            .y(d => d.x));
+
+      // Update the nodes
+      const nodeUpdate = node.data(nodes, d => d.data.name);
+
+      nodeUpdate.transition()
+        .duration(duration)
+        .attr('transform', d => `translate(${d.y},${d.x})`);
+
+      // Remove any exiting nodes
+      nodeUpdate.exit()
+        .transition()
+        .duration(duration)
+        .attr('transform', d => `translate(${source.y},${source.x})`)
+        .remove();
+    }
 
     // Append the SVG to the chart container
     document.getElementById('chart').appendChild(svg.node());
