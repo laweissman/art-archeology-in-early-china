@@ -1,0 +1,87 @@
+{
+ "name": "Chinese Dynasties",
+ "children": [
+  {
+   "name": "Xia Dynasty",
+   "children": [
+    {
+     "name": "c. 2070–1600 BCE",
+     "children": [
+      {"name": "Debate and Mythology", "size": null}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Shang Dynasty",
+   "children": [
+    {
+     "name": "c. 1600–1046 BCE",
+     "children": [
+      {"name": "Oracle Bone Inscriptions", "size": null},
+      {"name": "Notable Rulers", "size": null}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Zhou Dynasty",
+   "children": [
+    {
+     "name": "Western Zhou",
+     "children": [
+      {"name": "c. 1046–771 BCE", "size": null},
+      {"name": "King Wu of Zhou", "size": "1046–1043 BCE"},
+      {"name": "King Cheng of Zhou", "size": "1042–1021 BCE"}
+     ]
+    },
+    {
+     "name": "Eastern Zhou",
+     "children": [
+      {"name": "c. 770–256 BCE", "size": null},
+      {"name": "Spring and Autumn Period", "size": "770–476 BCE"},
+      {"name": "Warring States Period", "size": "475–221 BCE"}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Qin Dynasty",
+   "children": [
+    {
+     "name": "221–206 BCE",
+     "children": [
+      {"name": "Qin Shi Huang", "size": "221–210 BCE"}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Han Dynasty",
+   "children": [
+    {
+     "name": "Western Han",
+     "children": [
+      {"name": "206 BCE–9 CE", "size": null},
+      {"name": "Emperor Gaozu of Han", "size": "202–195 BCE"},
+      {"name": "Emperor Wu of Han", "size": "141–87 BCE"}
+     ]
+    },
+    {
+     "name": "Xin Dynasty",
+     "children": [
+      {"name": "9–23 CE", "size": null},
+      {"name": "Wang Mang", "size": "9–22 CE"}
+     ]
+    },
+    {
+     "name": "Eastern Han",
+     "children": [
+      {"name": "25–220 CE", "size": null},
+      {"name": "Emperor Guangwu of Han", "size": "25–57 CE"}
+     ]
+    }
+   ]
+  }
+ ]
+}
